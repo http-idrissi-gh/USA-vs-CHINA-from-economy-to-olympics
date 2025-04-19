@@ -1,1 +1,1 @@
-# USA vs CHINA, from economy to omympics!
+# USA vs CHINA, from economy to olympics!
