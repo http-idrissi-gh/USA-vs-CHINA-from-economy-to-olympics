@@ -1,0 +1,5 @@
+pandas
+numpy
+bokeh==3.6.2
+matplotlib==3.10
+pyproj==3.7.1
