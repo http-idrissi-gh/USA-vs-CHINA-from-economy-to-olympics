@@ -72,27 +72,39 @@ medailles_offsets = {"Gold": -0.08, "Silver": 0, "Bronze": 0.08}
 width = 0.15
 
 # Générer dynamiquement les barres et hovertools
+legend_items_added = set()
+
 for pays, base_offset in base_offsets.items():
     for medaille, sub_offset in medailles_offsets.items():
         col = f"{pays}_{medaille}"
         total_offset = base_offset + sub_offset
-        legende = f"{pays} - {medaille.capitalize()}"
+        legende = medaille.capitalize()
         color = colors[medaille]
 
-        vbar = figure_medailles_par_sport.vbar(
-            x=dodge('Sport', total_offset, range=figure_medailles_par_sport.x_range),
-            top=col, width=width, source=source_medailles,
-            color=color, legend_label=legende, name=col
-        )
+        show_legend = medaille not in legend_items_added
+        if show_legend:
+            legend_items_added.add(medaille)
+
+        # Créer le vbar avec ou sans légende selon le cas
+        if show_legend:
+            vbar = figure_medailles_par_sport.vbar(
+                x=dodge('Sport', total_offset, range=figure_medailles_par_sport.x_range),
+                top=col, width=width, source=source_medailles,
+                color=color, legend_label=legende, name=col
+            )
+        else:
+            vbar = figure_medailles_par_sport.vbar(
+                x=dodge('Sport', total_offset, range=figure_medailles_par_sport.x_range),
+                top=col, width=width, source=source_medailles,
+                color=color, name=col
+            )
 
         hover = HoverTool(
             renderers=[vbar],
-            tooltips=[
-                ("Sport", "@Sport"),
-                (legende, f"@{col}")
-            ]
+            tooltips=[("Sport", "@Sport"), (f"{pays} - {legende}", f"@{col}")]
         )
         figure_medailles_par_sport.add_tools(hover)
+
 
 figure_medailles_par_sport.x_range.range_padding = 0.1
 figure_medailles_par_sport.xgrid.grid_line_color = None
