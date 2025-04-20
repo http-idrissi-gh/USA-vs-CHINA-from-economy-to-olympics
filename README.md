@@ -11,7 +11,6 @@ The primary goal is to explore trends and differences between these two major Ol
 * Mohamed IDRISSI GHALMI
 * Youssouf DIAKITE
 
-*(Project Date: Approx. April 2025)*
 
 ## Features & Visualizations
 
@@ -45,7 +44,7 @@ The analysis is based on the "120 years of Olympic history athletes and results"
 
 * Python 3.13
 * Pandas
-* Bokeh 3.6.2
+* Bokeh 3.6
 * NumPy
 
 ## Setup and Installation
