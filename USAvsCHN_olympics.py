@@ -11,12 +11,12 @@ import numpy as np
 import pandas as pd
 from bokeh.plotting import figure, show
 from bokeh.models import (ColumnDataSource, HoverTool, Tabs, TabPanel, 
-                         WMTSTileSource, NumeralTickFormatter, Div, 
-                         TextInput, FactorRange)
+                         WMTSTileSource, NumeralTickFormatter, Div, FactorRange)
 from bokeh.layouts import column, row
 from bokeh.io import output_file
-from bokeh.transform import dodge, factor_cmap
-from bokeh.palettes import Category10, Spectral6, Category20
+from bokeh.transform import dodge
+from bokeh.palettes import Category10
+
 
 # ======================================================================
 # 2. Chargement des données de base
