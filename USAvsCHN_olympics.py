@@ -388,35 +388,6 @@ figure_evolution = figure(
     tooltips=None
 )
 
-# Lignes pour USA
-figure_evolution.line(
-    x='Year', 
-    y='USA_Gold', 
-    source=source_evolution, 
-    line_color='gold', 
-    line_width=2, 
-    legend_label='USA - Or', 
-    name='USA_Gold'
-)
-figure_evolution.line(
-    x='Year', 
-    y='USA_Silver', 
-    source=source_evolution, 
-    line_color='silver', 
-    line_width=2, 
-    legend_label='USA - Argent', 
-    name='USA_Silver'
-)
-figure_evolution.line(
-    x='Year', 
-    y='USA_Bronze', 
-    source=source_evolution, 
-    line_color='#CD7F32', 
-    line_width=2, 
-    legend_label='USA - Bronze', 
-    name='USA_Bronze'
-)
-
 # Setup des hovertools
 countries = {
     "USA": {
