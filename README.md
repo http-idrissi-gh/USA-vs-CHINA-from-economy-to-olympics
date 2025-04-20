@@ -1,4 +1,4 @@
-# USA vs China: Olympic Games Data Comparison
+# USA vs China, from economy to olympics!
 
 ## Project Overview
 
